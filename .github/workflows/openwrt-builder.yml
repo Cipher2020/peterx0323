@@ -74,6 +74,8 @@ jobs:
 
     - name: Load custom configuration
       run: |
+        sudo rm -rf feeds/small/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
+        #删除部分库以防报错
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
@@ -83,8 +85,6 @@ jobs:
     - name: Download package
       id: package
       run: |
-        sudo rm -rf feeds/small/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
-        #删除部分库以防报错
         cd openwrt
         make defconfig
         make download -j8
@@ -95,7 +95,6 @@ jobs:
       id: compile
       run: |
         rm -f ./.config*
-        rm -rf feeds/small/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
         cd openwrt
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
