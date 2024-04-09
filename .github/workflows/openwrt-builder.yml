@@ -51,7 +51,8 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-        sudo apt install libfuse-dev #升级ALIST依赖包
+        rm -rf feeds/packages/lang/golang svn export https://github.com/sbwml/packages_lang_golang/tree/19.x feeds/packages/lang/golang
+        #sudo apt install libfuse-dev #升级ALIST依赖包
 
     - name: Clone source code
       working-directory: /workdir
