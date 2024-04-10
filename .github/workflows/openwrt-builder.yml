@@ -52,7 +52,11 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
        
-        sudo apt-get install git gcc -y #升级ALIST依赖包
+        #sudo apt-get install git gcc -y #升级ALIST依赖包
+        sudo apt-get update
+        sudo apt-get upgrade
+        sudo apt-get install golang-1.16
+        sudo apt-get remove golang-"$(dpkg -s golang | grep Version: | cut -d' ' -f2)"
 
     - name: Clone source code
       working-directory: /workdir
