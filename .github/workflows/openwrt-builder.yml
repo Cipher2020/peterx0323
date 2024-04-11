@@ -55,7 +55,7 @@ jobs:
         sudo apt update
         sudo apt install libfuse-dev #升级ALIST依赖包
         rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
+        git clone https://github.com/sbwml/packages_lang_golang/tree/20.x feeds/packages/lang/golang
        
        
     - name: Clone source code
