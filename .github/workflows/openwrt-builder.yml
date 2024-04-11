@@ -52,11 +52,10 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
        
-        #sudo apt-get install git gcc -y #升级ALIST依赖包
-        sudo apt install libfuse-dev
-
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
+        sudo apt update
+        sudo apt install libfuse-dev #升级ALIST依赖包
+       
+       
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -93,6 +92,7 @@ jobs:
       id: package
       run: |
         cd openwrt
+        rm -rf feeds/packages/lang/golang #升级ALIST依赖包
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
