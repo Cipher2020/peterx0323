@@ -17,9 +17,10 @@ on:
   workflow_dispatch:
 
 env:
+  #REPO_URL: https://github.com/Cipher2020/immortalwrt
   REPO_URL: https://github.com/Cipher2020/immortalwrt
   #REPO_BRANCH: openwrt-22.03
-  REPO_BRANCH: openwrt-18.06-k5.4
+  REPO_BRANCH: openwrt-21.02
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
@@ -61,8 +62,8 @@ jobs:
            #升级ALIST依赖包
         #rm -rf feeds/packages/lang/golang 
         #svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
+        #rm -rf feeds/packages/lang/golang
+        #git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
        
 
     - name: Load custom feeds
