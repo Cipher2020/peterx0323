@@ -51,12 +51,7 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-       
-        sudo apt update
-        sudo apt install libfuse-dev #升级ALIST依赖包
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
-       
+      
     - name: Clone source code
       working-directory: /workdir
       run: |
@@ -93,11 +88,7 @@ jobs:
       id: package
       run: |
         cd openwrt
-         #升级ALIST依赖包
-        rm -rf feeds/packages/lang/golang
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
-        
+         
         make defconfig
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
@@ -108,6 +99,10 @@ jobs:
       run: |
         rm -f ./.config*
         cd openwrt
+        #升级ALIST依赖包
+        rm -rf feeds/packages/lang/golang
+        git clone https://github.com/sbwml/packages_lang_golang -b 20.x feeds/packages/lang/golang
+        
         echo -e "$(nproc) thread compile"
         make -j$(nproc) || make -j1 || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
