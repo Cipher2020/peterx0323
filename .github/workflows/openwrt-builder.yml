@@ -20,7 +20,7 @@ env:
   #REPO_URL: https://github.com/Cipher2020/immortalwrt
   REPO_URL: https://github.com/Cipher2020/immortalwrt
   #REPO_BRANCH: openwrt-22.03
-  REPO_BRANCH: openwrt-23.05
+  REPO_BRANCH: openwrt-18.06
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .config
   DIY_P1_SH: diy-part1.sh
@@ -59,11 +59,6 @@ jobs:
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
-           #升级ALIST依赖包
-        #rm -rf feeds/packages/lang/golang 
-        #svn export https://github.com/sbwml/packages_lang_golang/branches/19.x feeds/packages/lang/golang
-        rm -rf feeds/packages/lang/golang
-        git clone https://github.com/sbwml/packages_lang_golang -b 22.x feeds/packages/lang/golang
        
 
     - name: Load custom feeds
