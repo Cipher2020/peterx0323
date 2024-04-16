@@ -52,7 +52,7 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
-        touch target/linux/ipq40xx/Makefile  #touch target/linux/*/Makefile
+        #touch target/linux/ipq40xx/Makefile  #touch target/linux/*/Makefile
       
     - name: Clone source code
       working-directory: /workdir
