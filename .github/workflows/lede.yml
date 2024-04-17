@@ -59,6 +59,8 @@ jobs:
 
     - name: Load custom feeds
       run: |
+        sudo rm -rf feeds/small/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd-alt,miniupnpd-iptables,wireless-regdb}
+        #删除部分库以防报错
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
         cd openwrt
