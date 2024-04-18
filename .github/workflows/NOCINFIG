@@ -10,8 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: OpenWrt Builder
-
+name: noconfig
 on:
   repository_dispatch:
   workflow_dispatch:
