@@ -83,32 +83,6 @@ jobs:
         cd openwrt
         make defconfig
 
-        CONFIG_TARGET_ipq40xx=y
-        CONFIG_TARGET_ipq40xx_DEVICE_hiwifi_c526a=y
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
