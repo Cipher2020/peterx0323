@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: noconfig
+name: .config
 on:
   repository_dispatch:
   workflow_dispatch:
