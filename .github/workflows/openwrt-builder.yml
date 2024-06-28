@@ -63,12 +63,14 @@ jobs:
         chmod +x $DIY_P1_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P1_SH
+      
+
+    - name: Update feeds
+      run: |
         cp 1800.patch openwrt/1800.patch
         cd openwrt
         git apply 1800.patch
-
-    - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+        cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
