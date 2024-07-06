@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: configx
+name: configdocker
 
 on:
   repository_dispatch:
@@ -20,7 +20,7 @@ env:
   REPO_URL: https://github.com/cipher2020/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: .configx
+  CONFIG_FILE: .configdocker
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
   UPLOAD_BIN_DIR: false
@@ -66,11 +66,7 @@ jobs:
       
 
     - name: Update feeds
-      run: |
-        cp ax1800.patch openwrt/ax1800.patch
-        cd openwrt
-        git apply ax1800.patch
-        ./scripts/feeds update -a
+      run: cd openwrt && ./scripts/feeds update -a
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
