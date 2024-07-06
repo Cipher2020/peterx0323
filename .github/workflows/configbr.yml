@@ -67,11 +67,10 @@ jobs:
       
 
     - name: Update feeds
-      run: |
-        cp ax1800.patch openwrt/ax1800.patch
-        cd openwrt
-        git apply ax1800.patch
-        ./scripts/feeds update -a
+      run: cd openwrt && ./scripts/feeds update -a
+        
+       
+        
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
