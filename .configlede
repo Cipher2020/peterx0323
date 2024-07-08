@@ -855,9 +855,11 @@ CONFIG_PACKAGE_ubi-utils=y
 
 #CONFIG_PACKAGE_luci-app-unblockmusic=y
 CONFIG_PACKAGE_luci-app-easymesh=y
-CONFIG_PACKAGE_luci-app-aliddns=y
 CONFIG_PACKAGE_luci-theme-argone=y
-CONFIG_PACKAGE_luci-app-alist=y
+CONFIG_PACKAGE_luci-theme-webadmin=y
 CONFIG_PACKAGE_luci-app-istorex=y
+CONFIG_PACKAGE_luci-app-qbittorrent=y
+CONFIG_PACKAGE_luci-app-alist=y
+CONFIG_PACKAGE_luci-app-xunlei=y
 CONFIG_PACKAGE_luci-app-filebrowser=y
 CONFIG_PACKAGE_luci-app-dockerman=y
