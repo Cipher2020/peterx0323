@@ -23,5 +23,5 @@ sed -i 's/OpenWrt/jdc/g' package/base-files/files/bin/config_generate
 #sed -i "180i set wireless.default_radio${devidx}.ssid=HiwifiX" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i "181i set wireless.default_radio${devidx}.encryption=psk2" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i "182i set wireless.default_radio${devidx}.key=987654321" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
-
+rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
