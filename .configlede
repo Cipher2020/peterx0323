@@ -868,7 +868,7 @@ CONFIG_PACKAGE_luci-app-aria2=y
 CONFIG_PACKAGE_luci-app-verysync=y
 
 #CONFIG_PACKAGE_luci-app-diskman=y
-CONFIG_PACKAGE_luci-app-zerotier=y
+#CONFIG_PACKAGE_luci-app-zerotier=y
 #CONFIG_PACKAGE_luci-app-ttyd=y
 
 
