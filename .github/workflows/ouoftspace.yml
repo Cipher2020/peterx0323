@@ -112,6 +112,8 @@ jobs:
 
     - name: Load custom configuration
       run: |
+        rm -rf feeds/smpackage/msd_lite
+        git clone https://github.com/ximiTech/msd_lite.git feeds/smpackage/msd_lite
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
         chmod +x $DIY_P2_SH
