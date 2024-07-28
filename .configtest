@@ -871,5 +871,5 @@ CONFIG_PACKAGE_luci-app-dockerman=y
 #CONFIG_PACKAGE_luci-app-diskman=y
 
 #部分插件能编译 但是不显示
-CONFIG_PACKAGE_luci-app-filebrowser=y
-CONFIG_PACKAGE_luci-app-msd_lite=y
+#CONFIG_PACKAGE_luci-app-filebrowser=y
+#CONFIG_PACKAGE_luci-app-msd_lite=y
