@@ -76,8 +76,7 @@ jobs:
       env:
         DEBIAN_FRONTEND: noninteractive
       run: |
-        sudo -E apt-get -qq update
-        sudo apt install libfuse-dev  #alist 修正
+        sudo -E apt-get -qq update       
         sudo -E apt-get -qq install ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
         bzip2 ccache cmake cpio curl device-tree-compiler fastjar flex gawk gettext gcc-multilib g++-multilib \
         git gperf haveged help2man intltool libc6-dev-i386 libelf-dev libglib2.0-dev libgmp3-dev libltdl-dev \
@@ -105,10 +104,14 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && ./scripts/feeds update -a
+      run: cd openwrt && git clone https://github.com/ximiTech/luci-app-msd_lite.git && ./scripts/feeds update -a
 
     - name: Install feeds
-      run: cd openwrt && ./scripts/feeds install -a
+      run: |
+        cd openwrt
+        rm -rf feeds/smpackage/msd_lite
+        git clone https://github.com/ximiTech/msd_lite.git feeds/smpackage/msd_lite
+        ./scripts/feeds install -a
 
     - name: Load custom configuration
       run: |
