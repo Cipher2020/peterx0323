@@ -17,7 +17,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/breeze303/openwrt-6.x
+  REPO_URL: https://github.com/LiBwrt-op/openwrt-6.x
   #REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: main
   FEEDS_CONF: feeds.conf.default
