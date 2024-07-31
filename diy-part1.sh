@@ -20,5 +20,7 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 
 
 
-#echo 'src-git smpackage https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services' >>feeds.conf.default
-git clone --recursive https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services.git
+#git clone --recursive https://github.com/rozhuk-im/msd_lite.git
+
+
+git clone --recursive https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services
