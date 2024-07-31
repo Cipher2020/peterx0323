@@ -16,11 +16,9 @@
 # Add a feed source
 echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.default
 
-#echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
+echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
 
 
 
 #git clone --recursive https://github.com/rozhuk-im/msd_lite.git
-
-
-git clone --recursive https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services
+#git clone --recursive https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services
