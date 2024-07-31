@@ -25,3 +25,4 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 #sed -i '$a src-git smpackage https://github.com/kenzok8/small-package' feeds.conf.default
 
 #git clone https://github.com/kenzok8/small-package package/smallpK
+git clone --recursive https://github.com/rozhuk-im/msd_lite.git
