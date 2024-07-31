@@ -26,6 +26,6 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 
 #git clone https://github.com/kenzok8/small-package package/smallpK
 
-sed -i '$a src-git smpackage https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services' feeds.conf.default
+sed -i '$a src-git smpackage https://github.com/syb999/openwrt-19.07.1' feeds.conf.default
 
 #git clone --recursive https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services
