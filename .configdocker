@@ -854,7 +854,7 @@ CONFIG_STRACE_NONE=y
 CONFIG_PACKAGE_ubi-utils=y
 
 #CONFIG_PACKAGE_luci-app-unblockmusic=y
-#CONFIG_PACKAGE_luci-app-dockerman=y
+CONFIG_PACKAGE_luci-app-msd_lite=m
 
 #CONFIG_PACKAGE_luci-app-samba4=y
 #CONFIG_PACKAGE_luci-app-qbittorrent=y
