@@ -105,7 +105,10 @@ jobs:
         $GITHUB_WORKSPACE/$DIY_P1_SH
 
     - name: Update feeds
-      run: cd openwrt && git clone https://github.com/ximiTech/luci-app-msd_lite.git && ./scripts/feeds update -a
+      run: |
+        cd openwrt
+        git clone https://github.com/ximiTech/luci-app-msd_lite.git 
+        ./scripts/feeds update -a
 
     - name: Install feeds
       run: |
