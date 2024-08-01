@@ -10,14 +10,14 @@
 # See /LICENSE for more information.
 #
 
-name: .config
+name: .config 6609
 on:
   repository_dispatch:
   workflow_dispatch:
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_BRANCH: 20230609
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: .configno
   DIY_P1_SH: diy-part1.sh
