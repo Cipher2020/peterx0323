@@ -16,12 +16,12 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/cipher2020/lede
+  REPO_URL: https://github.com/Cipher2020/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: cr6609
   DIY_P1_SH: diy-part1.sh
-  DIY_P2_SH: diy-part2.sh
+  DIY_P2_SH: diy-part3.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
