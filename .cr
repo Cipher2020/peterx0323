@@ -1,4 +1,4 @@
-#
+#LEDE
 # Automatically generated file; DO NOT EDIT.
 # OpenWrt Configuration
 #
@@ -252,15 +252,15 @@ CONFIG_DEFAULT_libgcc=y
 CONFIG_DEFAULT_libustream-openssl=y
 CONFIG_DEFAULT_logd=y
 CONFIG_DEFAULT_luci=y
-CONFIG_DEFAULT_luci-app-accesscontrol=y
+# CONFIG_DEFAULT_luci-app-accesscontrol=y
 CONFIG_DEFAULT_luci-app-arpbind=y
 CONFIG_DEFAULT_luci-app-autoreboot=y
 # CONFIG_DEFAULT_luci-app-ddns=y
-CONFIG_DEFAULT_luci-app-filetransfer=y
+# CONFIG_DEFAULT_luci-app-filetransfer=y
 CONFIG_DEFAULT_luci-app-nlbwmon=y
 # CONFIG_DEFAULT_luci-app-ssr-plus=y
 # CONFIG_DEFAULT_luci-app-turboacc=y
-CONFIG_DEFAULT_luci-app-upnp=y
+# CONFIG_DEFAULT_luci-app-upnp=y
 # CONFIG_DEFAULT_luci-app-vlmcsd=y
 # CONFIG_DEFAULT_luci-app-vsftpd=y
 # CONFIG_DEFAULT_luci-app-wol=y
@@ -3361,7 +3361,7 @@ CONFIG_PACKAGE_luci-app-firewall=y
 # CONFIG_PACKAGE_luci-app-ps3netsrv is not set
 # CONFIG_PACKAGE_luci-app-pushbot is not set
 # CONFIG_PACKAGE_luci-app-qbittorrent is not set
-CONFIG_PACKAGE_luci-app-qbittorrent_dynamic=y
+# CONFIG_PACKAGE_luci-app-qbittorrent_dynamic=y
 # CONFIG_PACKAGE_luci-app-qos is not set
 # CONFIG_PACKAGE_luci-app-radicale is not set
 # CONFIG_PACKAGE_luci-app-ramfree is not set
@@ -3390,9 +3390,9 @@ CONFIG_PACKAGE_luci-app-rclone_INCLUDE_rclone-ng=y
 # CONFIG_PACKAGE_luci-app-travelmate is not set
 # CONFIG_PACKAGE_luci-app-ttyd is not set
 # CONFIG_PACKAGE_luci-app-turboacc is not set
-#CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_OFFLOADING=y
-#CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_BBR_CCA=y
-#CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_PDNSD=y
+CONFIG_PACKAGE_luci-app-zerotier=y
+CONFIG_PACKAGE_luci-app-msd_lite=y
+CONFIG_PACKAGE_luci-app-ddns=y
 # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_DNSFORWARDER is not set
 # CONFIG_PACKAGE_luci-app-turboacc_INCLUDE_DNSPROXY is not set
 # CONFIG_PACKAGE_luci-app-udpxy is not set
