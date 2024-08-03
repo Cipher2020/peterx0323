@@ -16,7 +16,7 @@ on:
   workflow_dispatch:
 
 env:
-  REPO_URL: https://github.com/Cipher2020/immortalwrt
+  REPO_URL: https://github.com/immortalwrt/immortalwrt
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: cr6609
