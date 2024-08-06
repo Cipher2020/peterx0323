@@ -25,6 +25,5 @@ sed -i 's/none/psk2/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '186i set wireless.default_radio${devidx}.key=987654321' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i "186i set wireless.default_radio${devidx}.key=987654321" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
-rm -rf feeds/luci/applications/luci-app-mosdns
-rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns}
-rm -rf feeds/smpackage/luci-app-adguardhome
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
