@@ -17,7 +17,7 @@ sed -i 's/192.168.5.1/192.168.6.1/g' package/base-files/files/bin/config_generat
 #sed -i 's/luci-theme-bootstrap/luci-theme-alpha/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
-sed -i 's/opewrt/CR6609/g' package/base-files/files/bin/config_generate
+sed -i 's/openwrt/CR6609/g' package/base-files/files/bin/config_generate
 
 # Modify Wifi
 #sed -i 's/ImmortalWrt/HiwifiX/g' ./package/network/config/wifi-scripts/files/lib/wifi/mac80211.sh
