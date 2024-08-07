@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: imm6609
+name: defconfig
 
 on:
   repository_dispatch:
