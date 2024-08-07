@@ -18,7 +18,7 @@
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 #echo 'src-git kenzo https://github.com/kenzok8/openwrt-packages' >>feeds.conf.default
-echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
+#echo 'src-git smpackage https://github.com/kenzok8/small-package' >>feeds.conf.default
 #echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
 
 
