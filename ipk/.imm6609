@@ -50,14 +50,14 @@ CONFIG_DEFAULT_luci=y
 #CONFIG_DEFAULT_luci-app-arpbind=y
 CONFIG_DEFAULT_luci-app-autoreboot=y
 CONFIG_DEFAULT_luci-app-ddns=y
-#CONFIG_DEFAULT_luci-app-filetransfer=y
-#CONFIG_DEFAULT_luci-app-nlbwmon=y
-#CONFIG_DEFAULT_luci-app-ssr-plus=y
-#CONFIG_DEFAULT_luci-app-turboacc=y
-#CONFIG_DEFAULT_luci-app-upnp=y
-#CONFIG_DEFAULT_luci-app-vlmcsd=y
-#CONFIG_DEFAULT_luci-app-vsftpd=y
-#CONFIG_DEFAULT_luci-app-wol=y
+# CONFIG_DEFAULT_luci-app-filetransfer is not set
+# CONFIG_DEFAULT_luci-app-nlbwmon is not set
+# CONFIG_DEFAULT_luci-app-ssr-plus is not set
+# CONFIG_DEFAULT_luci-app-turboacc is not set
+# CONFIG_DEFAULT_luci-app-upnp is not set
+# CONFIG_DEFAULT_luci-app-vlmcsd is not set
+# CONFIG_DEFAULT_luci-app-vsftpd is not set
+# CONFIG_DEFAULT_luci-app-wol is not set
 CONFIG_DEFAULT_luci-proto-ipv6=y
 CONFIG_DEFAULT_mtd=y
 CONFIG_DEFAULT_netifd=y
