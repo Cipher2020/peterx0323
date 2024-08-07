@@ -27,6 +27,6 @@ sed -i '186i set wireless.default_radio${devidx}.key=987654321' ./package/kernel
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 rm -rf feeds/packages/lang/golang
 rm -rf feeds/packages/net/msd_lite
-git clone https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services/msd_lite/luci-app-msd_lite feeds\luci\applications
+git clone https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services/msd_lite/luci-app-msd_lite feeds/luci/applications
 git clone https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services/msd_lite feeds/packages/net
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
