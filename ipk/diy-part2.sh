@@ -33,4 +33,5 @@ sed -i '186i set wireless.default_radio${devidx}.key=987654321' ./package/kernel
 #rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
 rm -rf feeds/packages/net/msd_lite
-
+echo 'src-git cimsd https://github.com/Cipher2020/msd' >>feeds.conf.default
+git clone https://github.com/Cipher2020/msd/tree/master/msd_lite feeds/cimsd/msd
