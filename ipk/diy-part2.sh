@@ -32,5 +32,5 @@ sed -i '186i set wireless.default_radio${devidx}.key=987654321' ./package/kernel
 #sed -i "186i set wireless.default_radio${devidx}.key=987654321" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb}
 
-rm -rf feeds/packages/net/msd_lite
+#rm -rf feeds/packages/net/msd_lite
 
