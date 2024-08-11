@@ -34,4 +34,4 @@ sed -i '186i set wireless.default_radio${devidx}.key=987654321' ./package/kernel
 
 rm -rf feeds/packages/net/msd_lite
 #echo 'src-git cimsd https://github.com/Cipher2020/msd' >>feeds.conf.default
-git clone https://github.com/Cipher2020/msd feeds/packages/net/msd_lite
+git clone --recursive https://github.com/rozhuk-im/msd_lite.git
