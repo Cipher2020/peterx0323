@@ -20,13 +20,10 @@ sed -i 's/192.168.1.1/192.168.5.1/g' package/base-files/files/bin/config_generat
 sed -i 's/OpenWrt/jdc/g' package/base-files/files/bin/config_generate
 
 # Modify Wifi
-sed -i 's/OpenWrt/HiwifiX/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/OpenWrt/HiwifiX-5/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/none/psk2/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '186i set wireless.default_radio${devidx}.key=987654321' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i "186i set wireless.default_radio${devidx}.key=987654321" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
-rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,msd_lite,luci-app-msd_lite}
+#rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,msd_lite,luci-app-msd_lite}
 rm -rf feeds/packages/lang/golang
-rm -rf feeds/packages/net/msd_lite
-git clone https://github.com/syb999/packages-23.05.3 feeds/luci/applications
-#git clone https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services/msd_lite feeds/packages/net
 git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
