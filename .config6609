@@ -773,3 +773,4 @@ CONFIG_STRACE_NONE=y
 CONFIG_PACKAGE_ubi-utils=y
 
 CONFIG_PACKAGE_luci-app-msd_lite=y
+CONFIG_PACKAGE_luci-app-easymesh=y
