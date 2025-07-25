@@ -1,4 +1,4 @@
-name: out of space
+name: xunlei
 
 on:
   repository_dispatch:
