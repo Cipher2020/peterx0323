@@ -19,3 +19,4 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 
 
 echo 'src-git smpackage https://github.com/Cipher2020/small-package' >>feeds.conf.default
+echo 'src-git kwrt https://github.com/kiddin9/kwrt-packages' >>feeds.conf.default
