@@ -5,8 +5,8 @@ on:
   workflow_dispatch:
 
 env:
-  #REPO_URL: https://github.com/coolsnowwolf/lede
-  REPO_URL: https://github.com/Cipher2020/lede2502
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  # REPO_URL: https://github.com/Cipher2020/lede2502
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
   CONFIG_FILE: xunlei/.X86
