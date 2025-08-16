@@ -1,10 +1,15 @@
 CONFIG_TARGET_ramips=y
 CONFIG_TARGET_ramips_mt7621=y
 CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-cr660x=y
-# CONFIG_DEFAULT_luci-app-ssr-plus=y
-# CONFIG_DEFAULT_luci-app-turboacc=y
-# CONFIG_DEFAULT_luci-app-upnp=y
-# CONFIG_DEFAULT_luci-app-vlmcsd=y
-# CONFIG_DEFAULT_luci-app-vsftpd=y
-# CONFIG_DEFAULT_luci-app-wol=y
+# CONFIG_DEFAULT_luci-app-ssr-plus is not set
+# CONFIG_PACKAGE_vlmcsd is not set
+# CONFIG_PACKAGE_vsftpd-alt is not set
+# CONFIG_PACKAGE_wol is not set
+# CONFIG_PACKAGE_luci-app-upnp is not set 
+# CONFIG_PACKAGE_luci-app-accesscontrol is not set
+# CONFIG_PACKAGE_luci-app-filetransfer is not set
+# CONFIG_PACKAGE_luci-app-vlmcsd is not set
+# CONFIG_PACKAGE_luci-app-vsftpd is not set
+# CONFIG_PACKAGE_luci-app-wol is not set
+# CONFIG_PACKAGE_luci-lib-fs is not set
 CONFIG_PACKAGE_luci-app-filebrowser=y
