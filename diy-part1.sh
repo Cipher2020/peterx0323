@@ -23,3 +23,7 @@ echo 'src-git smpackage https://github.com/Cipher2020/small-package' >>feeds.con
 
 git clone --recursive https://github.com/rozhuk-im/msd_lite.git
 #git clone --recursive https://github.com/syb999/openwrt-19.07.1/tree/master/package/network/services
+
+
+
+echo 'src-git kwrt https://github.com/kiddin9/kwrt-packages' >>feeds.conf.default
