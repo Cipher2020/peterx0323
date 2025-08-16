@@ -12,4 +12,4 @@ CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-cr660x=y
 # CONFIG_PACKAGE_luci-app-vsftpd is not set
 # CONFIG_PACKAGE_luci-app-wol is not set
 # CONFIG_PACKAGE_luci-lib-fs is not set
-CONFIG_PACKAGE_luci-app-filebrowser=y
+CONFIG_PACKAGE_luci-app-zerotier=y
