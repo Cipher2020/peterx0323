@@ -11,13 +11,15 @@
 #
 
 # Modify default IP
-sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
+# sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/files/bin/config_generate
+sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/luci2/bin/config_generate
 
 # Modify default theme
 #sed -i 's/luci-theme-bootstrap/luci-theme-alpha/g' feeds/luci/collections/luci/Makefile
 
 # Modify hostname
-sed -i 's/OpenWrt/cr6609/g' package/base-files/files/bin/config_generate
+# sed -i 's/OpenWrt/cr6609/g' package/base-files/files/bin/config_generate
+sed -i 's/OpenWrt/cr6609/g' package/base-files/luci2/bin/config_generate
 
 # Modify Wifi
 sed -i 's/OpenWrt/HiwifiX-5/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
