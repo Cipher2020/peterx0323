@@ -22,7 +22,7 @@ sed -i 's/192.168.1.1/192.168.6.1/g' package/base-files/luci2/bin/config_generat
 sed -i 's/OpenWrt/cr6609/g' package/base-files/luci2/bin/config_generate
 
 # Modify Wifi
-sed -i 's/OpenWrt/HiwifiX-5/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
+sed -i 's/OpenWrt/HiwifiX-5g/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i 's/none/psk2/g' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 sed -i '186i set wireless.default_radio${devidx}.key=987654321' ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 #sed -i "186i set wireless.default_radio${devidx}.key=987654321" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
