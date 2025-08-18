@@ -3,6 +3,8 @@ CONFIG_TARGET_x86_generic=y
 CONFIG_TARGET_x86_generic_Generic=y
 CONFIG_PACKAGE_luci-app-filebrowser-go=y
 CONFIG_VMDK_IMAGES=y
+CONFIG_PACKAGE_luci-app-frps=y
+CONFIG_PACKAGE_luci-app-frpc=y
 
 # CONFIG_PACKAGE_luci-app-webd=y
 # CONFIG_PACKAGE_luci-app-accesscontrol is not set
