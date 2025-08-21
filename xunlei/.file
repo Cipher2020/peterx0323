@@ -1,5 +1,17 @@
-CONFIG_TARGET_qualcommax=y
-CONFIG_TARGET_qualcommax_ipq60xx=y
-CONFIG_TARGET_qualcommax_ipq60xx_DEVICE_jdcloud_re-ss-01=y
-CONFIG_PACKAGE_luci-app-filebrowser=y
-CONFIG_PACKAGE_luci-app-webd=y
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7621=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-cr660x=y
+# CONFIG_PACKAGE_luci-app-ssr-plus is not set
+# CONFIG_PACKAGE_ssr-plus is not set
+# CONFIG_PACKAGE_vlmcsd is not set
+# CONFIG_PACKAGE_vsftpd-alt is not set
+# CONFIG_PACKAGE_wol is not set
+# CONFIG_PACKAGE_luci-app-upnp is not set 
+# CONFIG_PACKAGE_luci-app-accesscontrol is not set
+# CONFIG_PACKAGE_luci-app-filetransfer is not set
+# CONFIG_PACKAGE_luci-app-vlmcsd is not set
+# CONFIG_PACKAGE_luci-app-vsftpd is not set
+# CONFIG_PACKAGE_luci-app-wol is not set
+# CONFIG_PACKAGE_luci-lib-fs is not set
+CONFIG_PACKAGE_luci-app-zerotier=y
+CONFIG_VMDK_IMAGES=y
