@@ -18,6 +18,7 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 #echo 'src-git passwall https://github.com/xiaorouji/openwrt-passwall' >>feeds.conf.default
 
 
-echo 'src-git smpackage https://github.com/Cipher2020/small-package' >>feeds.conf.default
+echo 'src-git smpackage https://github.com/kuoruan/luci-app-v2ray' >>feeds.conf.default
+#echo 'src-git smpackage https://github.com/Cipher2020/small-package' >>feeds.conf.default
 #echo 'src-git kwrt https://github.com/cipher2020/kwrt-packages' >>feeds.conf.default
 #echo 'src-git gecoosac https://github.com/Cipher2020/openwrt-gecoosac' >>feeds.conf.default
