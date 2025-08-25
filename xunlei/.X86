@@ -5,7 +5,7 @@ CONFIG_TARGET_x86_generic_Generic=y
 CONFIG_PACKAGE_filebrowser=y
 CONFIG_PACKAGE_luci-app-filebrowser=y
 CONFIG_VMDK_IMAGES=y
-CONFIG_PACKAGE_luci-app-zerotier=y
+#CONFIG_PACKAGE_luci-app-zerotier=y
 #CONFIG_PACKAGE_luci-app-frpc=y
 
 # CONFIG_PACKAGE_luci-app-webd=y
