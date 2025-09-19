@@ -9,7 +9,7 @@ env:
   # REPO_URL: https://github.com/Cipher2020/lede2502
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: xunlei/.config
+  CONFIG_FILE: xunlei/.X86
   DIY_P1_SH: xunlei/diy-part1.sh
   DIY_P2_SH: xunlei/diy-part2.sh
   UPLOAD_BIN_DIR: false
