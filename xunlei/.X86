@@ -2,9 +2,10 @@ CONFIG_TARGET_x86=y
 CONFIG_TARGET_x86_generic=y
 CONFIG_TARGET_x86_generic_Generic=y
 
-CONFIG_PACKAGE_filebrowser=y
-CONFIG_PACKAGE_luci-app-filebrowser=y
+
 CONFIG_VMDK_IMAGES=y
+CONFIG_PACKAGE_luci-app-nginx-ui=y
+CONFIG_PACKAGE_luci-app-nginx=y
 #CONFIG_PACKAGE_luci-app-zerotier=y
 #CONFIG_PACKAGE_luci-app-frpc=y
 
