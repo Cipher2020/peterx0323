@@ -110,6 +110,7 @@ jobs:
       run: |
         cd openwrt && ./scripts/feeds update -a
         rm -rf feeds/luci/applications/luci-app-mosdns && rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns} #Lean源码里可能冲突的插件，删除
+        rm -rf feeds/luci/themes/luci-theme-argon
         rm -rf feeds/packages/lang/golang
         git clone https://github.com/kenzok8/golang feeds/packages/lang/golang  #拉取最新版golang编译
 
