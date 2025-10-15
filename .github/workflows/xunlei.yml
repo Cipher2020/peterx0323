@@ -108,6 +108,9 @@ jobs:
 
     - name: Update feeds
       run: cd openwrt && ./scripts/feeds update -a
+      rm -rf feeds/luci/applications/luci-app-mosdns && rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns} #Lean源码里可能冲突的插件，删除
+      rm -rf feeds/packages/lang/golang
+      git clone https://github.com/kenzok8/golang feeds/packages/lang/golang  #拉取最新版golang编译
 
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
