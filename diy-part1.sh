@@ -26,4 +26,4 @@ git clone --recursive https://github.com/rozhuk-im/msd_lite.git
 
 
 
-echo 'src-git kwrt https://github.com/kiddin9/kwrt-packages' >>feeds.conf.default
+#echo 'src-git kwrt https://github.com/kiddin9/kwrt-packages' >>feeds.conf.default
