@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: diff
+name: fan2100
 
 on:
   repository_dispatch:
