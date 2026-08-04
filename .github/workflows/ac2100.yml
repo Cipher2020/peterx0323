@@ -21,9 +21,9 @@ env:
   #REPO_URL: https://github.com/coolsnowwolf/lede
   REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: xunlei/.ac2100
-  DIY_P1_SH: xunlei/diy-part1.sh
-  DIY_P2_SH: xunlei/diy-part2.sh
+  CONFIG_FILE: ac2100/.ac2100
+  DIY_P1_SH: ac2100/diy-part1.sh
+  DIY_P2_SH: ac2100/diy-part2.sh
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
