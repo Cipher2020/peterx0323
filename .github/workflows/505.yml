@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: ac2100
+name: 505
 
 on:
   repository_dispatch:
