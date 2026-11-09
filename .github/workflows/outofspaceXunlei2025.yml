@@ -19,6 +19,8 @@ env:
   UPLOAD_WETRANSFER: false
   UPLOAD_RELEASE: false
   TZ: Asia/Shanghai
+  CCACHE_DIR: ${{ github.workspace }}/.ccache
+  CCACHE_MAXSIZE: 4G
 
 jobs:
   build:
@@ -32,32 +34,17 @@ jobs:
         df -hT
         echo "=============================================================================="
 
-    - name: Maximize build space (先挂载大磁盘)
+    # 只保留这一个清理Action，删掉上面那个hugoalh的，二者冲突
+    - name: Free up disk space
       uses: easimon/maximize-build-space@master
       with: 
-        root-reserve-mb: 1024
-        swap-size-mb: 1024
+        root-reserve-mb: 2048
+        swap-size-mb: 1
         remove-dotnet: 'true'
         remove-android: 'true'
         remove-haskell: 'true'
         remove-codeql: 'true'
         remove-docker-images: 'true'
-
-    - name: Optimize Disk Space (再清理系统缓存)
-      uses: hugoalh/disk-space-optimizer-ghaction@v0.8.1
-      with:
-        operate_sudo: "True"
-        general_include: ".+"
-        docker_include: ".+"
-        docker_prune: "True"
-        docker_clean: "True"
-        apt_prune: "True"
-        apt_clean: "True"
-        homebrew_prune: "True"
-        homebrew_clean: "True"
-        npm_prune: "True"
-        npm_clean: "True"
-        os_swap: "True"
 
     - name: Free up disk space complete
       run: |
@@ -89,6 +76,13 @@ jobs:
         sudo timedatectl set-timezone "$TZ"
         sudo chown $USER:$GROUPS $GITHUB_WORKSPACE
 
+    # 缓存ccache，多次编译提速，减少磁盘写入压力
+    - name: Cache ccache
+      uses: actions/cache@v4
+      with:
+        path: .ccache
+        key: ${{ runner.os }}-lede-arthur-ccache
+
     - name: Clone source code
       working-directory: ./
       run: |
@@ -112,7 +106,6 @@ jobs:
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a
 
-
     - name: Load custom configuration
       run: |
         rm -rf feeds/smpackage/msd_lite
@@ -131,19 +124,16 @@ jobs:
         make download -j8
         find dl -size -1024c -exec ls -l {} \;
         find dl -size -1024c -exec rm -f {} \;
-
-    - name: Check space usage before compile
-      run: |
-        echo "=============================================================================="
+        echo "===== 下载完成后磁盘空间 ====="
         df -hT
-        echo "=============================================================================="
 
     - name: Compile the firmware
       id: compile
       run: |
         cd openwrt
-        echo -e "$(nproc) thread compile"
-        make -j$(nproc) || make -j1 || make -j1 V=s
+        echo -e "2 thread compile"
+        # 重点修改：固定 -j2，爆盘风险大幅降低；失败自动降级单线程
+        make -j2 || make -j1 || make -j1 V=s
         echo "status=success" >> $GITHUB_OUTPUT
         grep '^CONFIG_TARGET.*DEVICE.*=y' .config | sed -r 's/.*DEVICE_(.*)=y/\1/' > DEVICE_NAME
         [ -s DEVICE_NAME ] && echo "DEVICE_NAME=_$(cat DEVICE_NAME)" >> $GITHUB_ENV
