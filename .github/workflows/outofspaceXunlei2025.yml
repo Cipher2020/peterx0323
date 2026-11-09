@@ -18,27 +18,30 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      # ========== 重点：先清理磁盘！！在checkout之前 ==========
-      - name: Maximize build space
-        uses: easimon/maximize-build-space@master
-        with:
-          root-reserve-mb: 3072
-          swap-size-mb: 0
-          remove-dotnet: 'true'
-          remove-android: 'true'
-          remove-haskell: 'true'
-          remove-codeql: 'true'
-          remove-docker-images: 'true'
-
-      - name: Show disk after clean
-        run: df -hT
+      - name: Clean disk manually (no LVM action)
+        run: |
+          echo "==== Before Clean ===="
+          df -hT
+          # 删除预装大体积组件
+          sudo rm -rf /usr/share/dotnet
+          sudo rm -rf /opt/ghc
+          sudo rm -rf /usr/local/lib/android
+          sudo rm -rf /usr/local/.ghcup
+          sudo rm -rf /usr/local/graalvm
+          sudo rm -rf /usr/local/share/chromium
+          sudo rm -rf /usr/local/share/powershell
+          sudo rm -rf /var/lib/docker
+          sudo apt autoremove -y
+          sudo apt clean
+          echo "==== After Clean ===="
+          df -hT
 
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
-          # 禁止apt下载翻译文件，直接解决 Translation-en 报错
+          # 禁止apt下载翻译索引，解决Translation-en报错
           echo 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/99nolang
           sudo apt update -qq
           sudo apt install -y ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
@@ -48,9 +51,7 @@ jobs:
           mkisofs msmtp nano ninja-build p7zip p7zip-full patch pkgconf python2.7 python3 python3-pyelftools \
           libpython3-dev qemu-utils rsync scons squashfs-tools subversion swig texinfo uglifyjs upx-ucl unzip \
           vim wget xmlto xxd zlib1g-dev python3-setuptools libfuse-dev
-          sudo apt autoremove -y
-          sudo apt clean
-          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/lib/android /var/lib/apt/lists/*
+          sudo rm -rf /var/lib/apt/lists/*
           sudo timedatectl set-timezone Asia/Shanghai
 
       - name: Cache ccache
