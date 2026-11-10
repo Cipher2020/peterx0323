@@ -1,0 +1,77 @@
+# ============================================================
+# 红米AC2100 / 小米AC2100 (MT7621) — FanchmWrt 25.12.2 精简配置
+# 核心保留：终端上下线(luci-app-fwx-user-record + fwxd)
+# 核心剔除：appfilter、dashboard、session/traffic-stat、record（重监控组件）
+# 用法：放进源码树根目录命名为 .config 后执行 make defconfig
+# ============================================================
+
+# ---- 目标平台（小米/红米 AC2100 在 OpenWrt 里就是 xiaomi_mi-router-ac2100）----
+CONFIG_TARGET_ramips=y
+CONFIG_TARGET_ramips_mt7621=y
+CONFIG_TARGET_ramips_mt7621_DEVICE_xiaomi_mi-router-ac2100=y
+
+# ---- LuCI 基础（新版 ucode LuCI + 兼容层）----
+CONFIG_PACKAGE_luci=y
+CONFIG_PACKAGE_luci-compat=y
+CONFIG_PACKAGE_luci-theme-fanchmwrt=y
+CONFIG_LUCI_LANG_zh_Hans=y
+
+# ---- 终端上下线 / 终端记录（保留，必须）----
+CONFIG_PACKAGE_fwxd=y
+CONFIG_PACKAGE_libfwx_common=y
+CONFIG_PACKAGE_luci-app-fwx-resources=y
+CONFIG_PACKAGE_luci-app-fwx-user-record=y
+CONFIG_PACKAGE_luci-app-fwx-user=y
+CONFIG_PACKAGE_luci-app-fwx-network=y
+CONFIG_PACKAGE_luci-app-fwx-system=y
+CONFIG_PACKAGE_luci-app-fwx-feature=y
+
+# ---- 必须保留：kmod-fwx 内核模块 ----
+# 终端上线/下线靠它提供的 /proc/net/af_client 采集，删掉=上下线功能直接失效
+CONFIG_PACKAGE_kmod-fwx=y
+
+# ---- 剔除：重负载监控类 Fanchm 组件（持续轮询/统计/写库）----
+# CONFIG_PACKAGE_luci-app-fwx-appfilter is not set
+# CONFIG_PACKAGE_luci-app-fwx-dashboard is not set
+# CONFIG_PACKAGE_luci-app-fwx-dashboard-setting is not set
+# CONFIG_PACKAGE_luci-app-fwx-macfilter is not set
+# CONFIG_PACKAGE_luci-app-fwx-mac-blacklist is not set
+# CONFIG_PACKAGE_luci-app-fwx-record is not set
+# CONFIG_PACKAGE_luci-app-fwx-record-whitelist is not set
+# CONFIG_PACKAGE_luci-app-fwx-session-stat is not set
+# CONFIG_PACKAGE_luci-app-fwx-traffic-stat is not set
+# CONFIG_PACKAGE_luci-app-fwx-app-center is not set
+
+# ---- 剔除：第三方常见吃内存插件（双保险）----
+# CONFIG_PACKAGE_luci-app-statistics is not set
+# CONFIG_PACKAGE_luci-app-nlbwmon is not set
+# CONFIG_PACKAGE_luci-app-vnstat is not set
+# CONFIG_PACKAGE_luci-app-adguardhome is not set
+# CONFIG_PACKAGE_luci-app-smartdns is not set
+# CONFIG_PACKAGE_luci-app-transmission is not set
+# CONFIG_PACKAGE_luci-app-aria2 is not set
+# CONFIG_PACKAGE_luci-app-diskman is not set
+
+# ---- 保留：基础网络与实用功能（几乎不占运行时资源）----
+CONFIG_PACKAGE_kmod-nft-offload=y
+CONFIG_PACKAGE_kmod-tun=y
+CONFIG_PACKAGE_kmod-wireguard=y
+CONFIG_PACKAGE_dnsmasq-full=y
+CONFIG_PACKAGE_luci-app-uhttpd=y
+CONFIG_PACKAGE_luci-app-upnp=y
+CONFIG_PACKAGE_luci-app-ddns=y
+CONFIG_PACKAGE_luci-app-wol=y
+CONFIG_PACKAGE_luci-app-autoreboot=y
+CONFIG_PACKAGE_block-mount=y
+CONFIG_PACKAGE_ip-full=y
+
+# ---- EasyTier（可选，需先在 feeds.conf.default 加一行 easytier feed）----
+CONFIG_PACKAGE_easytier=y
+CONFIG_PACKAGE_luci-app-easytier=y
+
+# ---- 128M 内存救急：内置 zram 压缩交换（替代外置 swap）----
+CONFIG_PACKAGE_zram-swap=y
+
+# ---- 剔除：无用基准/证书工具，省 flash 与启动时间 ----
+# CONFIG_PACKAGE_coremark is not set
+# CONFIG_PACKAGE_px5g-standalone is not set
