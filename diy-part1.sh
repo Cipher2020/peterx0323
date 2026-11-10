@@ -18,7 +18,7 @@ echo 'src-git helloworld https://github.com/fw876/helloworld' >>feeds.conf.defau
 #echo 'src-git kiddin9 https://github.com/kiddin9/openwrt-packages' >>feeds.conf.default
 
 echo 'src-git smpackage https://github.com/Cipher2020/small-package' >>feeds.conf.default
-
+src-git easytier https://github.com/EasyTier/luci-app-easytier.git
 #git clone https://github.com/ximiTech/luci-app-msd_lite.git
 
 git clone --recursive https://github.com/rozhuk-im/msd_lite.git
