@@ -24,3 +24,10 @@ echo 'src-git easytier https://github.com/EasyTier/luci-app-easytier.git' >> fee
 #echo 'src-git smpackage https://github.com/Cipher2020/small-package' >>feeds.conf.default
 #echo 'src-git kwrt https://github.com/cipher2020/kwrt-packages' >>feeds.conf.default
 #echo 'src-git gecoosac https://github.com/Cipher2020/openwrt-gecoosac' >>feeds.conf.default
+
+./scripts/feeds update -a
+rm -rf feeds/luci/applications/{luci-app-mosdns,luci-app-qBittorrent}
+rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns,qBittorrent}
+rm -rf feeds/luci/themes/luci-theme-argon
+rm -rf feeds/packages/lang/golang
+git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
