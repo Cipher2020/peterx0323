@@ -18,11 +18,11 @@ jobs:
   build:
     runs-on: ubuntu-22.04
     steps:
-      - name: Clean disk manually (no LVM action)
+      - name: Clean disk manually
         run: |
           echo "==== Before Clean ===="
           df -hT
-          # 删除预装大体积组件
+          free -h
           sudo rm -rf /usr/share/dotnet
           sudo rm -rf /opt/ghc
           sudo rm -rf /usr/local/lib/android
@@ -35,13 +35,17 @@ jobs:
           sudo apt clean
           echo "==== After Clean ===="
           df -hT
+          free -h
+          # git网络优化
+          git config --global http.lowSpeedLimit 1000
+          git config --global http.lowSpeedTime 600
+          git config --global core.compression 0
 
       - name: Checkout repo
         uses: actions/checkout@v4
 
       - name: Install dependencies
         run: |
-          # 禁止apt下载翻译索引，解决Translation-en报错
           echo 'Acquire::Languages "none";' | sudo tee /etc/apt/apt.conf.d/99nolang
           sudo apt update -qq
           sudo apt install -y ack antlr3 asciidoc autoconf automake autopoint binutils bison build-essential \
@@ -65,29 +69,18 @@ jobs:
           git clone --depth=1 -b $REPO_BRANCH $REPO_URL openwrt
           cd openwrt
           echo "SOURCE_ROOT=$PWD" >> $GITHUB_ENV
+          free -h
+          df -hT
 
-      - name: DIY part1
+      - name: DIY part1 (feeds更新、替换golang、删除内置包逻辑放diy‑part1.sh)
         run: |
           chmod +x $DIY_P1
           cd openwrt
           $GITHUB_WORKSPACE/$DIY_P1
+          free -h
+          df -hT
 
-      - name: Feeds update & replace golang
-        run: |
-          cd openwrt
-          ./scripts/feeds update -a
-          rm -rf feeds/luci/applications/{luci-app-mosdns,luci-app-qBittorrent}
-          rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns,qBittorrent}
-          rm -rf feeds/luci/themes/luci-theme-argon
-          rm -rf feeds/packages/lang/golang
-          git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
-
-      - name: Feeds install
-        run: |
-          cd openwrt
-          ./scripts/feeds install -a
-
-      - name: Load config & DIY part2
+      - name: Load config & DIY part2 【提前，先生成.config】
         run: |
           rm -rf openwrt/feeds/smpackage/msd_lite
           [ -e files ] && mv files openwrt/
@@ -96,6 +89,18 @@ jobs:
           cd openwrt
           $GITHUB_WORKSPACE/$DIY_P2
 
+      - name: Feeds install 根据.config选中包安装，带空判断防exit code 2
+        run: |
+          cd openwrt
+          PKG_LIST=$(cat .config 2>/dev/null | grep '^CONFIG_PACKAGE_' | sed 's/CONFIG_PACKAGE_//g' | sed 's/=y//' | sed 's/=m//' | grep -v '^#' | tr '\n' ' ')
+          if [ -z "$PKG_LIST" ]; then
+            echo "WARNING: no package list, skip feeds install"
+          else
+            ./scripts/feeds install $PKG_LIST
+          fi
+          free -h
+          df -hT
+
       - name: Download dl packages
         run: |
           cd openwrt
@@ -103,6 +108,7 @@ jobs:
           make download -j8
           find dl -size -1024c -delete
           df -hT
+          free -h
 
       - name: Compile firmware
         run: |
