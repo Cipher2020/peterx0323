@@ -29,5 +29,3 @@ echo 'src-git easytier https://github.com/EasyTier/luci-app-easytier.git' >> fee
 rm -rf feeds/luci/applications/{luci-app-mosdns,luci-app-qBittorrent}
 rm -rf feeds/packages/net/{alist,adguardhome,mosdns,smartdns,qBittorrent}
 rm -rf feeds/luci/themes/luci-theme-argon
-rm -rf feeds/packages/lang/golang
-git clone https://github.com/kenzok8/golang feeds/packages/lang/golang
