@@ -32,5 +32,9 @@ rm -rf src
 # 这里用5.1.4，你之前成功的版本
 git clone --depth=1 --branch v5.1.2 https://github.com/qbittorrent/qBittorrent src
 
+# 删掉 openlist，不再编译
+rm -rf feeds/packages/net/openlist
+
+
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
