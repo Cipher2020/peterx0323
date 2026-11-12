@@ -26,6 +26,11 @@
 #sed -i "186i set wireless.default_radio${devidx}.key=987654321" ./package/kernel/mac80211/files/lib/wifi/mac80211.sh
 rm -rf feeds/smpackage/clashoo
 rm -rf feeds/smpackage/{base-files,dnsmasq,firewall*,fullconenat,libnftnl,nftables,ppp,opkg,ucl,upx,vsftpd*,miniupnpd-iptables,wireless-regdb,filebrowser,clashoo}
-#删除SMPACKAGE的luci-app-qbittorrent
+# 进入qbittorrent包目录，重置为5.1.4
+cd feeds/smpackage/qbittorrent
+rm -rf src
+# 这里用5.1.4，你之前成功的版本
+git clone --depth=1 --branch v5.1.2 https://github.com/qbittorrent/qBittorrent src
+
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
