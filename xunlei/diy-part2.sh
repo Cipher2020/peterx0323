@@ -35,6 +35,21 @@ git clone --depth=1 --branch v5.1.2 https://github.com/qbittorrent/qBittorrent s
 # 删掉 openlist，不再编译
 rm -rf feeds/packages/net/openlist
 
+# diy-part2.sh，feeds update之后执行
+mkdir -p feeds/custom
+cd feeds/custom
+# 只clone filebrowser和luci-app-filebrowser
+rm -rf filebrowser luci-app-filebrowser
+git clone --depth=1 https://github.com/kenzok8/openwrt-packages tmpfb
+cp -r tmpfb/filebrowser ./
+cp -r tmpfb/luci-app-filebrowser ./
+rm -rf tmpfb
+cd ../../
+
+# 注册这个custom feed
+sed -i '$a src-link custom feeds/custom' feeds.conf.default
+
+
 
 rm -rf feeds/packages/lang/golang
 git clone https://github.com/sbwml/packages_lang_golang -b 26.x feeds/packages/lang/golang
