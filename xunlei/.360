@@ -1,3 +1,35 @@
+
 CONFIG_TARGET_mediatek=y
 CONFIG_TARGET_mediatek_filogic=y
-CONFIG_TARGET_mediatek_filogic_DEVICE_qihoo_360t7=y
+CONFIG_TARGET_mediatek_filogic_DEVICE_qihoo_360t7-ubi=y
+CONFIG_PACKAGE_luci-app-openclash=y
+CONFIG_PACKAGE_luci-app-easytier=y
+# CONFIG_LUCI_LANG_zh_Hans is not set
+# CONFIG_PACKAGE_libcap-ng is not set
+# CONFIG_PACKAGE_libuuid is not set
+# CONFIG_PACKAGE_luci-app-fwx-appfilter is not set
+# CONFIG_PACKAGE_luci-app-fwx-dashboard is not set
+# CONFIG_PACKAGE_luci-app-fwx-dashboard-setting is not set
+# CONFIG_PACKAGE_luci-app-fwx-feature is not set
+# CONFIG_PACKAGE_luci-app-fwx-mac-blacklist is not set
+# CONFIG_PACKAGE_luci-app-fwx-macfilter is not set
+# CONFIG_PACKAGE_luci-app-fwx-record is not set
+# CONFIG_PACKAGE_luci-app-fwx-record-whitelist is not set
+# CONFIG_PACKAGE_luci-app-fwx-user is not set
+# CONFIG_PACKAGE_luci-app-fwx-user-record is not set
+# CONFIG_PACKAGE_luci-app-upnp is not set
+# CONFIG_PACKAGE_luci-i18n-base-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-ddns-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-firewall-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-fwx-fastnat-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-fwx-firewall-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-fwx-network-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-fwx-session-stat-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-fwx-system-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-fwx-traffic-stat-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-fwx-wireless-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-package-manager-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-uhttpd-zh-cn is not set
+# CONFIG_PACKAGE_luci-i18n-wol-zh-cn is not set
+# CONFIG_PACKAGE_luci-theme-fanchmwrt is not set
+# CONFIG_PACKAGE_miniupnpd-nftables is not set
