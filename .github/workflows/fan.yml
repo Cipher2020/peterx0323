@@ -14,11 +14,11 @@ on:
   repository_dispatch:
   workflow_dispatch:
 env:
-  #REPO_URL: https://github.com/cipher2020/lede
-  REPO_URL: https://github.com/cipher2020/fanchmwrt
-  REPO_BRANCH: fanchmwrt-25.12.4
+  REPO_URL: https://github.com/coolsnowwolf/lede
+  #REPO_URL: https://github.com/cipher2020/fanchmwrt
+  REPO_BRANCH: master
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: xunlei/.f2100
+  CONFIG_FILE: xunlei/.360
   #CONFIG_FILE: .config6609
   DIY_P1_SH: xunlei/diy-part1.sh
   DIY_P2_SH: xunlei/diy-part2.sh
